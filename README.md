@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Data Interaction Technique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive data visualization web app, built with React, for exploring and comparing countries' economic and development indicators over time. The dataset covers GDP, GDP per capita, population, and HDI (Human Development Index) for countries from 1990 onward. The project demonstrates several data interaction and visualization techniques using different charting libraries.
 
-## Available Scripts
+## Visualizations
 
-In the project directory, you can run:
+- **Scatter / bubble view (amCharts 5)** — An interactive XY chart with bubble and line series and a cursor, paired with a map-based navigator (continents rendered with a Natural Earth projection) for exploring the data.
+- **Bar comparison (Plotly)** — A grouped bar chart that compares two selected countries for a chosen year, using dropdown selectors.
+- **Line trends (Chart.js)** — A line chart that compares the GDP of up to three selected countries across the years.
 
-### `npm start`
+## Interaction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users pick countries and years from dropdown menus to update the charts, and navigate between the different chart views with React Router.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Framework:** React 18
+- **Charting:** amCharts 5 (with geodata), Plotly.js, Chart.js (react-chartjs-2)
+- **Routing:** React Router v6
+- **Styling:** Bootstrap 5
+- **Other:** React Helmet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Clone the repository
+git clone https://github.com/maumoonmohammad/Data-Interaction-Technique.git
+cd Data-Interaction-Technique
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start the development server
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app will open at `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To create a production build:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `src/App.js` — amCharts 5 visualization with the XY chart and map navigator
+- `src/barchart.js` — Plotly grouped bar chart comparing countries by year
+- `src/line.js` — Chart.js line chart comparing countries' GDP over time
+- `countries.js`, `new_countries.js` — the country indicator data
